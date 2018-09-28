@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <h2>Liste des equipes</h2>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list dense>
+            <mat-list-item *ngFor="let team of equipes" [class.selected]="team === equipe" matBadge="{{team.numero}}" matBadgePosition="above before"
+            (click)="onSelect(team)">
+                <!--mat-icon svgIcon="symbol_hash"></mat-icon-->
+                <span>{{team.club}}</span>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
+<br>
+<app-team-detail [team]="equipe"></app-team-detail>

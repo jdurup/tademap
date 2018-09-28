@@ -1,0 +1,141 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+$md-darkblue: (
+    50 : #e2eaf2,
+    100 : #b6cbdf,
+    200 : #85a9ca,
+    300 : #5487b4,
+    400 : #306da4,
+    500 : #0b5394,
+    600 : #0a4c8c,
+    700 : #084281,
+    800 : #063977,
+    900 : #032965,
+    A100 : #95b6ff,
+    A200 : #6294ff,
+    A400 : #2f71ff,
+    A700 : #155fff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-darkred: (
+    50 : #f3e3e3,
+    100 : #e1baba,
+    200 : #ce8c8c,
+    300 : #ba5e5e,
+    400 : #ab3c3c,
+    500 : #9c1919,
+    600 : #941616,
+    700 : #8a1212,
+    800 : #800e0e,
+    900 : #6e0808,
+    A100 : #ff9f9f,
+    A200 : #ff6c6c,
+    A400 : #ff3939,
+    A700 : #ff1f1f,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-lightgrey: (
+    50 : #f9fbfc,
+    100 : #f1f6f7,
+    200 : #e8f0f1,
+    300 : #dee9eb,
+    400 : #d7e5e7,
+    500 : #d0e0e3,
+    600 : #cbdce0,
+    700 : #c4d8dc,
+    800 : #bed3d8,
+    900 : #b3cbd0,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-yellow: (
+    50 : #fffaed,
+    100 : #fff4d1,
+    200 : #ffecb3,
+    300 : #ffe494,
+    400 : #ffdf7d,
+    500 : #ffd966,
+    600 : #ffd55e,
+    700 : #ffcf53,
+    800 : #ffca49,
+    900 : #ffc038,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #fff5e1,
+    A700 : #ffedc8,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$tademap-app-primary: mat-palette($md-darkblue);
+$tademap-app-accent: mat-palette($md-darkred, 600, 100, 900);
+$tademap-app-warn:    mat-palette($md-yellow);
+
+$tademap-app-theme: mat-light-theme($tademap-app-primary, $tademap-app-accent, $tademap-app-warn);
+@include angular-material-theme($tademap-app-theme);
