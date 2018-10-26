@@ -13,7 +13,9 @@ import {
     MatInputModule,
     MatIconModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatGridListModule,
+    MatTableModule,
 } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 // third dependencies
@@ -21,11 +23,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 // apps dependencies
 import { AppComponent } from './app.component';
 import { AppRoutingRoutes } from './app-routing.routing';
-import { TeamsComponent } from './teams/teams.component';
-import { TeamDetailComponent } from './team-detail/team-detail.component';
-import { MessagesComponent } from './messages/messages.component';
-import { TiragesDetailComponent } from './tirages-detail/tirages-detail.component';
-import { TiragesComponent } from './tirages/tirages.component';
+import { TeamsComponent } from './components/teams/teams.component';
+import { TeamDetailComponent } from './components/team-detail/team-detail.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { TiragesDetailComponent } from './components/tirages-detail/tirages-detail.component';
+import { TiragesComponent } from './components/tirages/tirages.component';
 
 @NgModule({
    declarations: [
@@ -49,8 +51,10 @@ import { TiragesComponent } from './tirages/tirages.component';
       MatToolbarModule,
       MatIconModule,
       MatListModule,
+      MatGridListModule,
       MatSidenavModule,
-      AppRoutingRoutes
+      MatTableModule,
+      AppRoutingRoutes,
    ],
    providers: [],
    bootstrap: [

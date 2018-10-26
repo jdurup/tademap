@@ -1,3 +1,3 @@
-import { Tirage } from './tirage';
+import { Tirage } from './classes/tirage';
 
 export const TIRAGES: Tirage[] = [];

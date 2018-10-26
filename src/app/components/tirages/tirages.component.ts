@@ -1,13 +1,13 @@
-import { Team } from './../team';
-import { TiragesService } from './../tirages.service';
 import { Component, OnInit } from '@angular/core';
-import { Tirage } from './../tirage';
-import { TeamService } from '../team.service';
+import { Team } from '../../classes/team';
+import { TiragesService } from '../../services/tirages/tirages.service';
+import { Tirage } from '../../classes/tirage';
+import { TeamService } from '../../services/team/team.service';
 
 @Component({
   selector: 'app-tirages',
   templateUrl: './tirages.component.html',
-  styleUrls: ['./tirages.component.css']
+  styleUrls: ['./tirages.component.scss']
 })
 export class TiragesComponent implements OnInit {
 
@@ -27,9 +27,13 @@ export class TiragesComponent implements OnInit {
     this.selectedTirage = tirage;
   }
 
-  getTirages(): void {
-    this.tiragesService.getTirages()
+  getSavedTirages(): void {
+    this.tiragesService.getSavedTirages()
       .subscribe(tirages => this.tirages = tirages);
+  }
+
+  getTirages(): void {
+    this.tirages = this.tiragesService.getTirages();
   }
 
   create(): void {
@@ -38,6 +42,16 @@ export class TiragesComponent implements OnInit {
       .subscribe(equipes => teams = equipes);
     this.tiragesService.create(teams);
     this.getTirages();
+  }
+
+  getTime(partie): number {
+    let timeMilli = 0;
+    if (partie.fin === null) {
+      timeMilli = Date.now() - partie.debut;
+    } else {
+      timeMilli = partie.fin - partie.debut;
+    }
+    return timeMilli;
   }
 
 }

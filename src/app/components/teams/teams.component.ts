@@ -1,7 +1,7 @@
-import { TeamService } from './../team.service';
+import { TeamService } from '../../services/team/team.service';
 import { Component, OnInit } from '@angular/core';
 
-import { Team } from './../team';
+import { Team } from '../../classes/team';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
-  styleUrls: ['./teams.component.css']
+  styleUrls: ['./teams.component.scss']
 })
 export class TeamsComponent implements OnInit {
 

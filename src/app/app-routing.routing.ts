@@ -1,6 +1,6 @@
-import { TeamsComponent } from './teams/teams.component';
 import { Routes, RouterModule } from '@angular/router';
-import { TiragesComponent } from './tirages/tirages.component';
+import { TeamsComponent } from './components/teams/teams.component';
+import { TiragesComponent } from './components/tirages/tirages.component';
 
 const routes: Routes = [
   { path: 'equipes', component: TeamsComponent },

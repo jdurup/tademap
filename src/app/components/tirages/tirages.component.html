@@ -1,0 +1,47 @@
+<mat-sidenav-container class="tirage-layout">
+  <mat-sidenav mode="side" class="spaced" opened>
+      <button mat-raised-button (click)="create()" color="primary">Créer un nouveau tirage</button>
+      <div *ngIf="tirages.length == 0">Pas de tirage pour le moment</div>
+      <mat-list dense>
+          <mat-list-item *ngFor="let tirage of tirages" [class.selected]="tirage === selectedTirage"
+          (click)="onSelect(tirage)">
+              <span>{{tirage.id}}</span>&nbsp;<span>{{tirage.status}}</span>
+          </mat-list-item>
+      </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <div *ngIf="selectedTirage === undefined">Choisir un tirage</div>
+      <mat-card *ngIf="selectedTirage !== undefined" class="spaced">
+          <mat-card-title>{{selectedTirage.id}}</mat-card-title>
+          <mat-card-content>
+            <div style="display: flex;">
+              <span *ngFor="let partie of selectedTirage.parties">
+                <mat-grid-list cols="2" rowHeight="30px" class="partie">
+                    <mat-grid-tile colspan="2" rowspan="1" class="terrain"
+                    *ngIf="partie.terrain" (click)="selectedTirage.selectTerrain(partie)">
+                        T. {{partie.terrain}}
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1" rowspan="1" class="equipe">
+                        {{partie.equipe1 !== null ? partie.equipe1.numero : "B"}}
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1" rowspan="1" class="equipe">
+                        {{partie.equipe2 !== null ? partie.equipe2.numero : "B"}}
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1" rowspan="1" class="score"
+                    (click)="selectedTirage.setScore(partie.scoreEq1)">
+                        {{partie.scoreEq1 < 0 ? "X" : partie.scoreEq1}}
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1" rowspan="1" class="score"
+                    (click)="selectedTirage.setScore(partie.scoreEq2)">
+                        {{partie.scoreEq2 < 0 ? "X" : partie.scoreEq2}}
+                </mat-grid-tile>
+                    <mat-grid-tile colspan="2" rowspan="1" class="temps">
+                        {{getTime(partie) | date:'hh:mm'}}
+                    </mat-grid-tile>
+                </mat-grid-list>
+              </span>
+            </div>
+          </mat-card-content>
+      </mat-card>
+  </mat-sidenav-content>
+</mat-sidenav-container>

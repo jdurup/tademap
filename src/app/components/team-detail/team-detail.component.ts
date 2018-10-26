@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Team } from './../team';
+import { Team } from '../../classes/team';
 
 @Component({
   selector: 'app-team-detail',
   templateUrl: './team-detail.component.html',
-  styleUrls: ['./team-detail.component.css']
+  styleUrls: ['./team-detail.component.scss']
 })
 export class TeamDetailComponent implements OnInit {
 

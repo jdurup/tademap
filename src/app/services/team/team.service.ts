@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Team } from './team';
-import { MessageService } from './message.service';
-import { TEAMS } from './mock-teams';
+import { Team } from '../../classes/team';
+import { MessageService } from '../message/message.service';
+import { TEAMS } from '../../mock-teams';
 
 @Injectable({
   providedIn: 'root'
